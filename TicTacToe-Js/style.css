@@ -1,0 +1,127 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-image: url('./assets/bg.jpg');
+    background-position: center;
+    background-size: auto;
+    background-repeat: repeat;
+}
+
+.board {
+    display: grid;
+    grid-template-areas: 
+        "1 2 3"
+        "4 5 6"
+        "7 8 9";
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    
+}
+
+.title {
+    font-family: cursive;
+    font-size: 6rem;
+    text-align: center;
+}
+
+.container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.cell {
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    border: 4px solid black;
+    font-size: 8rem;
+}
+
+.cell:hover {
+    background-color: rgba(0, 0, 0, 0.250);
+    
+}
+
+.cell:nth-child(-n + 3) {
+    border-top: none;
+}
+.cell:nth-last-child(-n + 3) {
+    border-bottom: none;
+}
+.cell:nth-child(1) {
+    border-left: none;
+}
+.cell:nth-child(4) {
+    border-left: none;
+}
+.cell:nth-child(7) {
+    border-left: none;
+}
+.cell:nth-child(3) {
+    border-right: none;
+}
+.cell:nth-child(6) {
+    border-right: none;
+}
+.cell:nth-child(9) {
+    border-right: none;
+}
+
+.none {
+    display: none;
+}
+
+.winning-class {
+    position: absolute;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.750);
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.winner {
+    font-size: 10rem;
+    color: white;
+}
+.winner-restart {
+    border: none;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 4rem;
+    padding: 20px;
+    border-radius: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+
+.restart {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 2rem;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.250);
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 20px;
+}
+.restart:hover {
+    background-color: black;
+    color: white;
+}
+
+.btn {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

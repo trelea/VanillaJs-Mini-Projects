@@ -1,0 +1,201 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    background-color: rgb(240, 240, 240);
+}
+
+
+main {
+    position: relative;
+}
+
+
+li {
+    list-style-type: none;
+}
+
+
+.settings-panel {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(30, 30, 30);
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.4);
+    padding: 15px;
+    border-radius: 10px;
+    gap: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+.credits {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 5px;
+    z-index: 20;
+}
+
+
+.credits h3 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 1rem;
+}
+.light-credits {
+    background-color: white;
+}
+
+
+.element button[type="button"] {
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+}
+
+
+.element {
+    border: 1px solid white;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.delete-pad {
+    background-color: rgb(200, 1, 1);
+}
+.delete-pad:hover {
+    background-color: rgb(250, 1, 1);
+}
+
+
+.new-pad {
+    background-color: rgb(0, 150, 0);
+}
+.new-pad:hover {
+    background-color: rgb(0, 200, 0);
+}
+
+
+input[type="color"] {
+    border: none;
+    height: 40px;
+    width: 40px;
+}
+
+
+input[type="number"] {
+    border: none;
+    height: 40px;
+    width: 50px;
+    outline: none;
+}
+
+
+.active-action svg {
+    background-color: white ;
+    stroke: black;
+}
+
+
+.start-modal-container {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(5px);
+    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.start-modal-container .modal {
+    background-color: white;
+    border-radius: 20px;
+    padding: 50px;
+    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+.start-modal-container .modal .color-mode {
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 50px;
+    text-decoration: underline;
+}
+
+.start-modal-container .modal .modes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.start-modal-container .modal .modes .mode {
+    border: 2px solid black;
+    border-radius: 20px;
+    text-align: center;
+    padding: 20px;
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 1rem;
+    font-family: sans-serif;
+}
+
+.start-modal-container .modal .modes .light {
+    color: black;
+}
+.start-modal-container .modal .modes .dark {
+    color: white;
+    background-color: black;
+}
+
+.start-modal-container .modal .modes button {
+    margin-top: 30px;
+    background-color: transparent;
+    border: none;
+}
+
+.start-modal-container .modal .modes .light:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.start-modal-container .modal .modes .dark:hover {
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.none {
+    display: none;
+}
+
+.top-bar {
+    position: absolute;
+    display: flex;
+}
+
+.pads {
+    position: absolute;
+    display: flex;
+    left: 500px;
+    top: 25px;
+    align-items: center;
+}
