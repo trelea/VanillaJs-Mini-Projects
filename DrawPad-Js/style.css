@@ -192,10 +192,56 @@ input[type="number"] {
     display: flex;
 }
 
+.exced-pads-limit {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.exced-pads-limit .modal {
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border-radius: 25px;
+    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.5);
+}
+.exced-pads-limit .modal .exit-modal {
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: transparent;
+    border: none;
+}
+.exced-pads-limit .modal .exit-modal svg:hover {
+    stroke: black;
+}
+.exced-pads-limit .modal .exit-modal path:hover {
+    fill: white;
+}
+.exced-pads-limit .modal .text {
+    padding: 25px;
+}
+
 .pads {
     position: absolute;
     display: flex;
-    left: 500px;
+    left: 515px;
     top: 25px;
     align-items: center;
+    gap: 40px;
+}
+
+.pad-tab {
+    height: 80px;
+    width: 80px;
+    background-color: rgba(0, 0, 0, 0.5);
+    border: 2px solid white;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
 }

@@ -14,6 +14,7 @@ let textSize = 4;
 let pencilAction = false;
 let setDarkMode = false;
 let availablePads = new Array();
+let createdTabs = 0;
 
 
 
@@ -116,15 +117,47 @@ canva.addEventListener('mouseup', () => {
 });
 
 
-
 newPad.addEventListener('click', () => {
-    let pads = document.getElementsByClassName('pads')[0]
+    createdTabs = createdTabs + 1;
 
+    if (createdTabs > 10) {
+        document.getElementById('limit-modal').classList.add('exced-pads-limit')
+        document.getElementById('close-modal').addEventListener('click', () => {
+            document.getElementById('limit-modal').classList.remove('exced-pads-limit')
+        })
+        return
+    }
+    
+
+    let pads = document.getElementsByClassName('pads')[0]
     let div = document.createElement('div');
+    div.classList.add('pad-tab')
+    div.setAttribute('id', `tab-${createdTabs}`)
+    
+
     let h1 = document.createElement('h1');
-    h1.innerText = "new Pad"
-    div.appendChild(h1);
+    h1.style.textAlign = 'center';
+    h1.style.color = 'white';
+    h1.innerText = createdTabs;
+
+    let delBtn = document.createElement('button');
+    delBtn.setAttribute('id', 'del-pad')
+    delBtn.style.border = 'none';
+    delBtn.style.background = 'transparent'
+    delBtn.style.display = 'flex';
+    delBtn.style.flexDirection = 'row-reverse';
+    delBtn.style.padding = '6px';
+    delBtn.style.width = 'fit-content';
+    delBtn.innerHTML = '<svg width="20px" height="20px" viewBox="-4.8 -4.8 33.60 33.60" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0)matrix(1, 0, 0, 1, 0, 0)" stroke="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"><rect x="-4.8" y="-4.8" width="33.60" height="33.60" rx="16.8" fill="#c01c28" strokewidth="0"></rect></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.144"></g><g id="SVGRepo_iconCarrier"> <path d="M10 11V17" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14 11V17" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M4 7H20" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M6 7H12H18V18C18 19.6569 16.6569 21 15 21H9C7.34315 21 6 19.6569 6 18V7Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M9 5C9 3.89543 9.89543 3 11 3H13C14.1046 3 15 3.89543 15 5V7H9V5Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g></svg>'
+    div.appendChild(h1)
+    div.appendChild(delBtn)
     pads.appendChild(div);
+
+    document.querySelectorAll('#del-pad').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            console.log(e.target.parentElement)
+        })
+    })
 })
 
 
